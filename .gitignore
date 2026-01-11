@@ -1,1 +1,45 @@
-.terraform/**
+# --- Terraform directories ---
+.terraform/
+.terraform.tfstate.lock.info
+
+# --- Terraform state files (never commit these) ---
+terraform.tfstate
+terraform.tfstate.backup
+*.tfstate
+*.tfstate.*
+
+# --- Terraform plan files ---
+*.tfplan
+
+# --- Sensitive variable files ---
+*.tfvars
+*.auto.tfvars
+*.tfvars.json
+
+# --- Crash logs ---
+crash.log
+crash.*.log
+
+# --- Local override files (used for debugging only) ---
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# --- Module build artifacts ---
+*.zip
+
+# --- IDE / Editor noise ---
+# VS Code
+.vscode/
+.history/
+*.code-workspace
+
+# JetBrains
+.idea/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
