@@ -1,0 +1,14 @@
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.tfstate
+.terraform.tfstate.backup
+.terraform.lock.hcl
+*.tfplan
+crash.log
+
+# Local override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
