@@ -12,13 +12,3 @@ resource "azurerm_management_group" "platform" {
 resource "azurerm_management_group" "landingzones" {
   display_name = "LandingZones"
 }
-
-resource "azurerm_management_group" "corp" {
-  display_name               = "Corp"
-  parent_management_group_id = azurerm_management_group.landingzones.id
-}
-
-resource "azurerm_management_group" "ai" {
-  display_name               = "AI"
-  parent_management_group_id = azurerm_management_group.landingzones.id
-}
