@@ -207,7 +207,7 @@ git push origin main
 Create a DevOps module to automate service principal + backend:
 
 ```hcl
-# terraform-devops/modules/app-integration/main.tf
+# devops-automation/modules/app-integration/main.tf
 resource "azuread_application" "app" {
   display_name = "terraform-${var.app_code}-${var.environment}-ci"
 }
