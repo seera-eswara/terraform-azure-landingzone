@@ -10,7 +10,7 @@ Use this checklist when onboarding a new app team.
 - [ ] Compliance requirements documented (PCI, HIPAA, SOC2, etc.)
 - [ ] RBAC group names defined (e.g., `app1-contributors`, `app1-operators`)
 
-## Subscription Factory Run (Platform Team)
+## Subscription Factory Run (cloud Team)
 
 - [ ] Prepared `terraform.tfvars` with app_code, environment, billing_scope_id
 - [ ] Ran `terraform init` in subscription factory
@@ -36,7 +36,7 @@ Use this checklist when onboarding a new app team.
   - [ ] Client ID (app registration ID)
   - [ ] Tenant ID
   - [ ] Service Principal Object ID
-- [ ] (Optional) Created managed identity in Platform subscription
+- [ ] (Optional) Created managed identity in cloud subscription
 - [ ] (Preferred) Created federated credential for GitHub OIDC
   - [ ] Issuer: `https://token.actions.githubusercontent.com`
   - [ ] Subject: `repo:YOUR_ORG/app1-infra:ref:refs/heads/main`

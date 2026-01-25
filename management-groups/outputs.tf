@@ -1,6 +1,6 @@
-output "platform_mg_id" {
-  description = "Resource ID of Platform management group"
-  value       = azurerm_management_group.platform.id
+output "cloud_mg_id" {
+  description = "Resource ID of cloud management group"
+  value       = azurerm_management_group.cloud.id
 }
 
 output "landingzones_mg_id" {

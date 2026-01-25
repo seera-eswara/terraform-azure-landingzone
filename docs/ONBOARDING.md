@@ -1,8 +1,8 @@
 # App Team Onboarding Workflow
 
-End-to-end process when an app team approaches the Platform team to onboard into the Azure estate.
+End-to-end process when an app team approaches the cloud team to onboard into the Azure estate.
 
-## Phase 1: Request & Intake (App Team + Platform Team)
+## Phase 1: Request & Intake (App Team + cloud Team)
 
 1. App team submits request via GitHub issue or form with:
    - App code (e.g., `app1`)
@@ -11,16 +11,16 @@ End-to-end process when an app team approaches the Platform team to onboard into
    - Team lead & contacts
    - RBAC group names (e.g., `app1-contributors`, `app1-operators`)
 
-2. Platform team reviews:
+2. cloud team reviews:
    - App code uniqueness
    - Budget feasibility
    - Compliance requirements
 
-3. Platform team creates tracking issue and schedules integration task.
+3. cloud team creates tracking issue and schedules integration task.
 
 ## Phase 2: Subscription & Baseline Creation (Terraform)
 
-Platform team runs subscription factory automation:
+cloud team runs subscription factory automation:
 
 ```bash
 cd terraform-azure-subscription-factory/requests/dev
@@ -253,7 +253,7 @@ module "app1_dev_integration" {
 
 ## Phase 4: Handoff to App Team
 
-Platform team provides app team:
+cloud team provides app team:
 
 1. **Subscription ID & Credentials:**
    - Subscription name, ID, MG path
@@ -271,7 +271,7 @@ Platform team provides app team:
    - How to run Terraform locally (init, plan, apply)
    - How CI/CD works
    - How to request exemptions or role escalations
-   - Escalation contacts (platform team, security team)
+   - Escalation contacts (cloud team, security team)
 
 5. **Support:**
    - Point of contact for issues
@@ -295,7 +295,7 @@ Changes trigger CI/CD: TFLint → TFSec → Conftest → Approve → Apply.
 | Role | Phase | Responsibilities |
 |------|-------|------------------|
 | **App Team** | 1, 5 | Submit request, develop workloads, manage app resources |
-| **Platform Team** | 2, 3, 4 | Run subscription factory, coordinate integration, handoff |
+| **cloud Team** | 2, 3, 4 | Run subscription factory, coordinate integration, handoff |
 | **DevOps Team** | 3 | Set up SPN, backend, secrets, CI/CD integration |
 | **Security Team** | 1, 3 | Review compliance, approve policies & exemptions |
 

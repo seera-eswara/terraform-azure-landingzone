@@ -26,14 +26,14 @@ terraform-azure-landingzone/
 │
 └── References terraform-policy-as-code:
     ├── Reads policy definitions
-    └── Assigns to Platform & LandingZones MGs
+    └── Assigns to cloud & LandingZones MGs
 ```
 
 ## Deployment Flow
 
 ```
 1. terraform-azure-landingzone apply
-   ├─ Creates Platform & LandingZones MGs
+   ├─ Creates cloud & LandingZones MGs
    ├─ Queries policy definitions from Azure
    ├─ Assigns policies to each MG
    └─ Policies cascade to child subscriptions (inherited)
@@ -49,14 +49,14 @@ terraform-azure-landingzone/
 
 ## Policy Assignments
 
-### Platform Management Group
+### cloud Management Group
 
 | Policy | Effect | Scope |
 |--------|--------|-------|
 | Allowed VM SKUs | Deny | Infrastructure resources |
 | Naming Convention | Deny | All resources |
 
-**Allowed VM SKUs for Platform**:
+**Allowed VM SKUs for cloud**:
 - Standard_B2ts_v2
 - Standard_D2s_v3
 - Standard_D4s_v3
@@ -101,7 +101,7 @@ Adjust allowed regions, SKUs, or other parameters:
 ```hcl
 # management-groups/policies.tf
 
-resource "azurerm_management_group_policy_assignment" "platform_allowed_skus" {
+resource "azurerm_management_group_policy_assignment" "cloud_allowed_skus" {
   # ... existing config ...
 
   parameters = jsonencode({
@@ -130,10 +130,10 @@ data "azurerm_policy_definition" "new_policy" {
 }
 
 # Create assignment
-resource "azurerm_management_group_policy_assignment" "platform_new_policy" {
-  name                 = "platform-new-policy"
+resource "azurerm_management_group_policy_assignment" "cloud_new_policy" {
+  name                 = "cloud-new-policy"
   policy_definition_id = data.azurerm_policy_definition.new_policy.id
-  management_group_id  = azurerm_management_group.platform.id
+  management_group_id  = azurerm_management_group.cloud.id
 
   parameters = jsonencode({
     # Policy-specific parameters

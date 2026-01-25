@@ -6,7 +6,7 @@ flowchart TB
         GH -->|Merge| Deploy[Deploy Pipeline]
     end
 
-    subgraph Platform_Repo[Platform Engineering Repos]
+    subgraph cloud_Repo[cloud Engineering Repos]
         Modules[Terraform Modules Repo]
         SubFactory[Subscription Factory Repo]
         Policies[Policy as Code Repo]

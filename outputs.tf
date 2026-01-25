@@ -1,6 +1,6 @@
-output "platform_mg_id" {
-  description = "Platform management group ID"
-  value       = module.management_groups.platform_mg_id
+output "cloud_mg_id" {
+  description = "cloud management group ID"
+  value       = module.management_groups.cloud_mg_id
 }
 
 output "landingzones_mg_id" {

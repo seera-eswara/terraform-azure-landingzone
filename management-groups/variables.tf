@@ -1,7 +1,7 @@
-variable "platform_mg_name" {
-  description = "Name (ID) for the Platform management group"
+variable "cloud_mg_name" {
+  description = "Name (ID) for the cloud management group"
   type        = string
-  default     = "platform"
+  default     = "cloud"
 }
 
 variable "landingzones_mg_name" {
@@ -10,14 +10,14 @@ variable "landingzones_mg_name" {
   default     = "landingzones"
 }
 
-variable "platform_owners" {
-  description = "Principal IDs to assign Owner at Platform MG"
+variable "cloud_owners" {
+  description = "Principal IDs to assign Owner at cloud MG"
   type        = list(string)
   default     = []
 }
 
-variable "platform_contributors" {
-  description = "Principal IDs to assign Contributor at Platform MG"
+variable "cloud_contributors" {
+  description = "Principal IDs to assign Contributor at cloud MG"
   type        = list(string)
   default     = []
 }

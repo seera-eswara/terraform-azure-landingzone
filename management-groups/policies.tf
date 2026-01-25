@@ -5,11 +5,11 @@
 module "landing_zone_policies" {
   source = "git::https://github.com/seera-eswara/terraform-policy-as-code.git//modules/landing-zone-policies?ref=v1.1.0"
 
-  platform_mg_id    = azurerm_management_group.platform.id
+  cloud_mg_id    = azurerm_management_group.cloud.id
   landingzone_mg_id = azurerm_management_group.landingzones.id
 
-  # Platform policies with stricter SKU controls
-  platform_allowed_vm_skus = [
+  # cloud policies with stricter SKU controls
+  cloud_allowed_vm_skus = [
     "Standard_D4s_v3",
     "Standard_D8s_v3",
     "Standard_B4ms"
