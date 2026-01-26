@@ -28,22 +28,10 @@ variable "landingzones_mg_name" {
   default     = "landingzones"
 }
 
-variable "corp_mg_name" {
-  description = "Name (ID) for the Corp management group"
+variable "applications_mg_name" {
+  description = "Name (ID) for the Applications management group"
   type        = string
-  default     = "corp"
-}
-
-variable "online_mg_name" {
-  description = "Name (ID) for the Online management group"
-  type        = string
-  default     = "online"
-}
-
-variable "sandbox_mg_name" {
-  description = "Name (ID) for the Sandbox management group"
-  type        = string
-  default     = "sandbox"
+  default     = "applications"
 }
 
 variable "cloudinfra_owners" {

@@ -13,17 +13,17 @@ data "azurerm_role_definition" "contributor" {
   scope = "/"
 }
 
-# cloud MG assignments
-resource "azurerm_role_assignment" "cloud_owner" {
-  for_each           = toset(var.cloud_owners)
-  scope              = azurerm_management_group.cloud.id
+# CloudInfra MG assignments
+resource "azurerm_role_assignment" "cloudinfra_owner" {
+  for_each           = toset(var.cloudinfra_owners)
+  scope              = azurerm_management_group.cloudinfra.id
   role_definition_id = data.azurerm_role_definition.owner.id
   principal_id       = each.key
 }
 
-resource "azurerm_role_assignment" "cloud_contributor" {
-  for_each           = toset(var.cloud_contributors)
-  scope              = azurerm_management_group.cloud.id
+resource "azurerm_role_assignment" "cloudinfra_contributor" {
+  for_each           = toset(var.cloudinfra_contributors)
+  scope              = azurerm_management_group.cloudinfra.id
   role_definition_id = data.azurerm_role_definition.contributor.id
   principal_id       = each.key
 }

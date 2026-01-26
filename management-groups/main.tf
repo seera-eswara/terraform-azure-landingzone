@@ -29,21 +29,9 @@ resource "azurerm_management_group" "landingzones" {
 }
 
 # Landing Zones child MGs
-resource "azurerm_management_group" "corp" {
-  name                       = var.corp_mg_name
-  display_name               = "Corp"
-  parent_management_group_id = azurerm_management_group.landingzones.id
-}
-
-resource "azurerm_management_group" "online" {
-  name                       = var.online_mg_name
-  display_name               = "Online"
-  parent_management_group_id = azurerm_management_group.landingzones.id
-}
-
-resource "azurerm_management_group" "sandbox" {
-  name                       = var.sandbox_mg_name
-  display_name               = "Sandbox"
+resource "azurerm_management_group" "applications" {
+  name                       = var.applications_mg_name
+  display_name               = "Applications"
   parent_management_group_id = azurerm_management_group.landingzones.id
 }
 
