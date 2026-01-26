@@ -1,7 +1,25 @@
-variable "cloud_mg_name" {
-  description = "Name (ID) for the cloud management group"
+variable "cloudinfra_mg_name" {
+  description = "Name (ID) for the Cloud Infra management group"
   type        = string
-  default     = "cloud"
+  default     = "cloudinfra"
+}
+
+variable "management_mg_name" {
+  description = "Name (ID) for the Management management group"
+  type        = string
+  default     = "management"
+}
+
+variable "connectivity_mg_name" {
+  description = "Name (ID) for the Connectivity management group"
+  type        = string
+  default     = "connectivity"
+}
+
+variable "identity_mg_name" {
+  description = "Name (ID) for the Identity management group"
+  type        = string
+  default     = "identity"
 }
 
 variable "landingzones_mg_name" {
@@ -10,14 +28,32 @@ variable "landingzones_mg_name" {
   default     = "landingzones"
 }
 
-variable "cloud_owners" {
-  description = "Principal IDs to assign Owner at cloud MG"
+variable "corp_mg_name" {
+  description = "Name (ID) for the Corp management group"
+  type        = string
+  default     = "corp"
+}
+
+variable "online_mg_name" {
+  description = "Name (ID) for the Online management group"
+  type        = string
+  default     = "online"
+}
+
+variable "sandbox_mg_name" {
+  description = "Name (ID) for the Sandbox management group"
+  type        = string
+  default     = "sandbox"
+}
+
+variable "cloudinfra_owners" {
+  description = "Principal IDs to assign Owner at Cloud Infra MG"
   type        = list(string)
   default     = []
 }
 
-variable "cloud_contributors" {
-  description = "Principal IDs to assign Contributor at cloud MG"
+variable "cloudinfra_contributors" {
+  description = "Principal IDs to assign Contributor at Cloud Infra MG"
   type        = list(string)
   default     = []
 }
