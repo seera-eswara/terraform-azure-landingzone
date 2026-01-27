@@ -3,9 +3,9 @@
 # This eliminates duplication and establishes single source of truth
 
 module "landing_zone_policies" {
-	source = "../../terraform-policy-as-code/modules/landing-zone-policies"
+	source = "git@github.com:seera-eswara/terraform-policy-as-code.git//modules/landing-zone-policies?ref=v1.2.0"
 
-	# Local module expects cloudinfra_* inputs
+	# Module from policy-as-code repo with cloudinfra_* inputs
 	cloudinfra_mg_id  = azurerm_management_group.cloudinfra.id
 	landingzone_mg_id = azurerm_management_group.landingzones.id
 
