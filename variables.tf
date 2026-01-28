@@ -97,6 +97,16 @@ variable "private_dns_zones" {
   ]
 }
 
+variable "app_spoke_vnets" {
+  description = "Map of app-owned spoke VNets to peer with the hub (provide VNet IDs after app teams deploy)"
+  type = map(object({
+    vnet_id                 = string
+    allow_forwarded_traffic = optional(bool, true)
+    allow_gateway_transit   = optional(bool, true)
+  }))
+  default = {}
+}
+
 variable "tags" {
   description = "Tags to apply to all resources"
   type        = map(string)

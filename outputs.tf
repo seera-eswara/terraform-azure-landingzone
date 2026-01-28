@@ -1,11 +1,16 @@
-output "cloud_mg_id" {
-  description = "cloud management group ID"
-  value       = module.management_groups.cloud_mg_id
+output "cloudinfra_mg_id" {
+  description = "CloudInfra management group ID"
+  value       = module.management_groups.cloudinfra_mg_id
 }
 
 output "landingzones_mg_id" {
   description = "Landing Zones management group ID"
   value       = module.management_groups.landingzones_mg_id
+}
+
+output "applications_mg_id" {
+  description = "Applications management group ID"
+  value       = module.management_groups.applications_mg_id
 }
 
 # Networking Outputs

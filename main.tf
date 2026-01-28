@@ -19,6 +19,7 @@ module "networking" {
 
   log_analytics_retention_days = var.log_analytics_retention_days
   private_dns_zones            = var.private_dns_zones
+  app_spoke_vnets              = var.app_spoke_vnets
 
   tags = var.tags
 }
